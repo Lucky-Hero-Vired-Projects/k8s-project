@@ -1,15 +1,11 @@
-FROM node:20-slim
+FROM nginx:latest
 
-WORKDIR /app
-
-COPY package*.json ./
-
-RUN npm install --production
+WORKDIR /usr/nginx/www/html/
 
 COPY . .
 
-EXPOSE 5000
+EXPOSE 80
 
-ENV PORT=5000
+ENV PORT=80
 
-CMD [ "node", "index.js" ]
+CMD [ "nginx", "-g", "daemon-off" ]
