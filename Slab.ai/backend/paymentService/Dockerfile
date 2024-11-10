@@ -8,8 +8,8 @@ RUN npm install --production
 
 COPY . .
 
-EXPOSE 3002
+EXPOSE 3000
 
-ENV PORT=3002
+ENV PORT=3000
 
 CMD [ "node", "index.js" ]
